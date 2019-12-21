@@ -9,6 +9,7 @@ defmodule TimeAgo.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
+      package: package(),
 
       # Docs
       name: "TimeAgo",
@@ -24,6 +25,14 @@ defmodule TimeAgo.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp package() do
+    [
+      name: "time_ago",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/pr0grammr/time-ago"}
     ]
   end
 

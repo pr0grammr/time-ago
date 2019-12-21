@@ -1,33 +1,37 @@
 defmodule TimeAgo do
   @moduledoc """
-  Module for getting the amount of days/hours/minutes/seconds since past a specific date
+  Module for getting the amount of days/hours/minutes/seconds since past a specific date.
+
+  This module is inspired of functionality in many social networks
   """
 
   @doc """
   Returns tuple
-  first value is the amount of days/hours/minutes/seconds
-  seconds value is the unit as a atom
+  first value is the unit as an atom
+  second value is the amount of days/hours/minutes/seconds
+
+  second argument has the current time of UTC timezone as default value
 
   ## Examples
-        ###  original date
+        # returns original date if amount of days are more than 7
         iex> TimeAgo.from_date ~N[2019-12-10 23:00:00], ~N[2019-12-21 22:30:00]
-        {~N[2019-12-10 23:00:00], :date}
+        {:date, ~N[2019-12-10 23:00:00]}
 
-        ### days
+        # returns days if amount of days are more than 0
         iex> TimeAgo.from_date ~N[2019-12-18 12:00:00], ~N[2019-12-21 22:30:00]
-        {3, :days}
+        {:days, 3}
 
-        ### hours
+        # returns hours if amount of hours are more than 0
         iex> TimeAgo.from_date ~N[2019-12-21 20:00:00], ~N[2019-12-21 22:30:00]
-        {2, :hours}
+        {:hours, 2}
 
-        ### minutes
+        # returns minutes if amount of minutes are more than 0
         iex> TimeAgo.from_date ~N[2019-12-21 18:00:00], ~N[2019-12-21 18:30:00]
-        {30, :minutes}
+        {:minutes, 30}
 
-        ### seconds
+        # returns seconds if amount of seconds are more than 0
         iex> TimeAgo.from_date ~N[2019-12-21 13:00:00], ~N[2019-12-21 13:00:55]
-        {55, :seconds}
+        {:seconds, 55}
   """
   @spec from_date(DateTime.t(), DateTime.t()) :: {number, atom}
   def from_date(first, last \\ DateTime.utc_now) do
@@ -35,11 +39,11 @@ defmodule TimeAgo do
     %{days: days, hours: hours, minutes: minutes, seconds: seconds} = calc_diff first, last
     
     cond do
-      days > 7 -> {first, :date}
-      days > 0 -> {days, :days}
-      hours > 0 -> {hours, :hours}
-      minutes > 0 -> {minutes, :minutes}
-      seconds > 0 -> {seconds, :seconds}
+      days > 7 -> {:date, first}
+      days > 0 -> {:days, days}
+      hours > 0 -> {:hours, hours}
+      minutes > 0 -> {:minutes, minutes}
+      seconds > 0 -> {:seconds, seconds}
     end
   end
 

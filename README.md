@@ -4,6 +4,8 @@ Module for getting the amount of days/hours/minutes/seconds since past a specifi
 This module is inspired by the functionality of many social networks and forums
 
 [![Build Status](https://travis-ci.com/pr0grammr/time-ago.svg?branch=master)](https://travis-ci.com/pr0grammr/time-ago)
+<a href="https://hexdocs.pm/time_ago/TimeAgo.html#content" target="_blank"><img alt="Hex.pm" src="https://img.shields.io/hexpm/dt/time_ago"></a>
+<a href="https://hexdocs.pm/time_ago/TimeAgo.html#content" target="_blank"><img alt="Hex.pm" src="https://img.shields.io/hexpm/v/time_ago"></a>
 
 <a href="https://hexdocs.pm/time_ago/TimeAgo.html#content" target="_blank" title="TimeAgo - Hex Docs">See Hex Docs</a>
 

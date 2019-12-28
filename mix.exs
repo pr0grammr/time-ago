@@ -10,6 +10,12 @@ defmodule TimeAgo.MixProject do
       deps: deps(),
       description: description(),
       package: package(),
+      preferred_cli_env: [
+        "coveralls": :test,
+        "coveralls.html": :test,
+        "coveralls.json": :test,
+      ],
+      test_coverage: [tool: ExCoveralls],
 
       # Docs
       name: "TimeAgo",
@@ -39,7 +45,8 @@ defmodule TimeAgo.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, "~> 0.21", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.21", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.5.7", only: :test}
     ]
   end
 end

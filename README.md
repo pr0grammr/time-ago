@@ -7,8 +7,6 @@ This module is inspired by the functionality of many social networks and forums
 <a href="https://hexdocs.pm/time_ago/TimeAgo.html#content" target="_blank"><img alt="Hex.pm" src="https://img.shields.io/hexpm/dt/time_ago"></a>
 <a href="https://hexdocs.pm/time_ago/TimeAgo.html#content" target="_blank"><img alt="Hex.pm" src="https://img.shields.io/hexpm/v/time_ago"></a>
 
-<a href="https://hexdocs.pm/time_ago/TimeAgo.html#content" target="_blank" title="TimeAgo - Hex Docs">See Hex Docs</a>
-
 ## Installation
 
 The package can be installed
@@ -17,7 +15,7 @@ by adding `time_ago` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:time_ago, "~> 0.1.1"}
+    {:time_ago, "~> 1.1.0"}
   ]
 end
 ```
